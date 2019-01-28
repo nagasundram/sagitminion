@@ -10,9 +10,11 @@ class AuthenticateUser
     Jwt.encode(user_id: user.id) if user
   end
 
+  attr_accessor :email
+
   private
 
-  attr_accessor :email, :password
+  attr_accessor :password
 
   def user
     user = User.find_by_email(email)
